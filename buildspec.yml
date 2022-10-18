@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+  build:
+    commands:
+      - cd angular-tour-of-heroes/
+      - echo executando configuracao de strict-ssl
+      - npm config set strict-ssl false
+      - echo install
+      - npm install
+      - echo build
+      - npm run build
+cache:
+  paths:
+    - 'node_modules/**/*'
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: no
